@@ -1,0 +1,38 @@
+﻿<Window x:Class="EAD_Project_D1.VechileWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EAD_Project_D1"
+        mc:Ignorable="d"
+        Title="VechileWindow" Height="400" Width="800">
+    <Grid Background="Black">
+        <DataGrid Name="mygrid" AutoGenerateColumns="False" CanUserAddRows="False" Margin="0,0,0,123" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="Driver Name"  Binding="{Binding Divername}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Bus Number" Binding="{Binding Number}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Type" Binding="{Binding Type}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Edit" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Edit" Click="edit"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Delete" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Delete" Click="delete"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Edit User" HorizontalAlignment="Left" Margin="543,305,0,0" VerticalAlignment="Top" Width="126" Click="Button_Click"/>
+        <TextBox Name="t1" HorizontalAlignment="Left" Margin="280,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="t2" HorizontalAlignment="Left" Margin="405,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="t3" HorizontalAlignment="Left" Margin="155,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>
